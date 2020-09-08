@@ -1,0 +1,14 @@
+# Turn on validation, so we can use import:
+version: ~> 1.0
+
+services:
+- postgresql
+
+before_script:
+- psql -c 'CREATE EXTENSION IF NOT EXISTS unaccent'
+- createdb -O travis redmine_test
+- rails test:scm:setup:all
+- rails db:migrate
+
+script:
+- bundle exec rake test || true

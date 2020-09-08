@@ -1,0 +1,6 @@
+test:
+  adapter: postgresql
+  database: redmine_test
+  host: localhost
+  username: travis
+  password: ""
