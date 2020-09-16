@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 ruby '>= 2.3.0', '< 2.7.0'
 gem 'bundler', '>= 1.12.0'
 
-gem 'appmap', github: 'applandinc/appmap-ruby', branch: 'master'
-
 gem 'rails', '5.2.4.2'
 gem 'sprockets', '~> 3.7.2' if RUBY_VERSION < '2.5'
 gem 'rouge', '~> 3.22.0'
@@ -85,6 +83,9 @@ group :development do
 end
 
 group :test do
+
+  gem 'appmap', github: 'applandinc/appmap-ruby', branch: 'master'
+
   gem "rails-dom-testing"
   gem 'mocha', '>= 1.4.0'
   gem 'simplecov', (RUBY_VERSION < '2.4' ? '~> 0.17.0' : '~> 0.18.5'), :require => false
