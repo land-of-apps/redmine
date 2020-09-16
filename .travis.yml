@@ -4,6 +4,9 @@ version: ~> 1.0
 services:
 - postgresql
 
+import:
+- land-of-apps/land-of-apps:travis/ruby-imports.yml
+
 before_script:
 - psql -c 'CREATE EXTENSION IF NOT EXISTS unaccent'
 - createdb -O travis redmine_test
@@ -11,4 +14,4 @@ before_script:
 - rails db:migrate
 
 script:
-- bundle exec rake test || true
+- APPMAP=true bundle exec rake test || true
